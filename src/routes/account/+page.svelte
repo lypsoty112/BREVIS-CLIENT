@@ -1,9 +1,15 @@
 <script lang="ts">
 	import TextInput from '../../components/inputs/textInput.svelte';
+	import { logOut } from '../../api/_loggedIn';
+
 	let email: string = 'chris.doe@gmail.com';
 	let subscriptionName: string = 'Free plan';
-
 	let payments = ['dfsq'];
+
+	const onLogout = () => {
+		logOut();
+		window.location.href = '/';
+	};
 </script>
 
 <div class="container mx-auto p-4">
@@ -35,5 +41,8 @@
 				{/if}
 			</div>
 		</div>
+	</div>
+	<div class="mt-4 flex justify-center">
+		<button class="btn-lg btn variant-filled-secondary" on:click={onLogout}>Log out</button>
 	</div>
 </div>

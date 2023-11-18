@@ -3,13 +3,7 @@
 
 	export let name: string;
 	export let placeholder: string = '•••••';
-	export let setValue: (value: string) => void;
-
-	const onChange = (event: Event) => {
-		const target = event.target as HTMLInputElement;
-		setValue(target.value);
-	};
-
+	export let value: string = '';
 	let hidden: boolean = true;
 	let inputtype: string = 'password';
 	const togglePassword = (event: Event) => {
@@ -27,7 +21,11 @@
 <label class="label my-2">
 	<span>{name}</span>
 	<div class="flex">
-		<input class="input w-11/12" type={inputtype} {placeholder} on:change={onChange} />
+		{#if hidden}
+			<input class="input w-11/12" type="password" {placeholder} bind:value />
+		{:else}
+			<input class="input w-11/12" type="text" {placeholder} bind:value />
+		{/if}
 		<div class="w-1/12 flex justify-end">
 			<button class="btn-icon variant-filled-secondary" on:click={togglePassword}>
 				{#if hidden}

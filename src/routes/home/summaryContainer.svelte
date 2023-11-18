@@ -1,14 +1,17 @@
 <script lang="ts">
 	export let name: string;
-	export let date: string;
+	export let date_completed: string;
 	export let description: string;
-	export let link_id: string;
+	export let summary_id: number;
+
+	$: link_id = btoa(summary_id.toString());
+	$: date = new Date(date_completed).toLocaleDateString();
 </script>
 
 <a href={'/summary/' + link_id}>
 	<div class="card card-hover cursor-pointer p-2 variant-filled-primary">
 		<header class="card-header font-bold text-lg">{name}</header>
-		<section class="p-2">
+		<section class="p-4">
 			<div class="italic">{date}</div>
 			<div>
 				{description}
