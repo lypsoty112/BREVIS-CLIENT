@@ -37,6 +37,7 @@
 	"dependencies": {
 		"@cocreators-ee/apity": "^0.0.5",
 		"@floating-ui/dom": "1.5.3",
-		"email-validator": "^2.0.4"
+		"email-validator": "^2.0.4",
+		"svelte-markdown": "^0.4.0"
 	}
 }

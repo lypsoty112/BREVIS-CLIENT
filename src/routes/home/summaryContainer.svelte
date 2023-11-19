@@ -8,7 +8,7 @@
 	$: date = new Date(date_completed).toLocaleDateString();
 </script>
 
-<a href={'/summary/' + link_id}>
+<a href={'/summary?id=' + link_id}>
 	<div class="card card-hover cursor-pointer p-2 variant-filled-primary">
 		<header class="card-header font-bold text-lg">{name}</header>
 		<section class="p-4">

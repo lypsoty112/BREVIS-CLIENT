@@ -1,0 +1,153 @@
+@tailwind variants;
+@tailwind base;
+@tailwind components;
+
+.md h1 {
+	@apply text-4xl;
+	@apply font-bold;
+	@apply mb-4;
+}
+
+.md h2 {
+	@apply text-3xl;
+	@apply font-bold;
+	@apply mb-4;
+}
+
+.md h3 {
+	@apply text-2xl;
+	@apply font-bold;
+	@apply mb-4;
+}
+
+.md h4 {
+	@apply text-xl;
+	@apply font-bold;
+	@apply mb-4;
+}
+
+.md h5 {
+	@apply text-lg;
+	@apply font-bold;
+	@apply mb-4;
+}
+
+.md h6 {
+	@apply text-base;
+	@apply font-bold;
+	@apply mb-4;
+}
+
+.md p {
+	@apply mb-4;
+}
+
+.md a {
+	@apply text-blue-500;
+	@apply underline;
+}
+
+.md ul {
+	@apply list-disc;
+	@apply ml-4;
+	@apply mb-4;
+}
+
+.md ol {
+	@apply list-decimal;
+	@apply ml-4;
+	@apply mb-4;
+}
+
+.md li {
+	@apply mb-2;
+}
+
+.md blockquote {
+	@apply border-l-4;
+	@apply border-blue-500;
+	@apply pl-4;
+	@apply mb-4;
+}
+
+.md code {
+	@apply variant-glass-surface;
+	@apply px-1;
+	@apply rounded-sm;
+}
+
+.md pre {
+	@apply variant-glass-surface;
+	@apply p-4;
+	@apply rounded-sm;
+	@apply overflow-x-auto;
+}
+
+.md table {
+	@apply border-collapse;
+	@apply border-2;
+	@apply border-primary-300-600-token;
+	@apply mb-4;
+}
+
+.md th {
+	@apply border-2;
+	@apply border-primary-300-600-token;
+
+	@apply p-2;
+}
+
+.md td {
+	@apply border-2;
+	@apply border-primary-300-600-token;
+	@apply p-2;
+}
+
+.md img {
+	@apply mx-auto;
+	@apply my-4;
+	@apply rounded-sm;
+}
+
+.md hr {
+	@apply border-primary-300-600-token;
+	@apply my-4;
+}
+
+.md .gatsby-highlight {
+	@apply mb-4;
+}
+
+.md .gatsby-highlight-code-line {
+	@apply variant-glass-surface;
+	@apply block;
+	@apply mx-0;
+	@apply px-4;
+	@apply py-1;
+	@apply rounded-sm;
+}
+
+.md .gatsby-highlight pre[class*='language-'] {
+	@apply mb-0;
+	@apply rounded-sm;
+}
+
+.md .gatsby-highlight pre[class*='language-'] code {
+	@apply rounded-sm;
+}
+
+.md .gatsby-highlight pre[class*='language-'].line-numbers {
+	@apply rounded-sm;
+}
+
+.md .gatsby-highlight pre[class*='language-'].line-numbers code {
+	@apply rounded-sm;
+}
+
+.md .gatsby-highlight pre[class*='language-'].line-numbers .line-numbers-rows {
+	@apply rounded-sm;
+}
+
+.md .gatsby-highlight pre[class*='language-'].line-numbers .line-numbers-rows span {
+	@apply rounded-sm;
+}

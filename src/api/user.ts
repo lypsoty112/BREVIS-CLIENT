@@ -108,3 +108,9 @@ export const register = async (
 
 	return response;
 };
+
+// Get user
+export const getUser = async () => {
+	const url = `${config.base_url}/user`;
+	return await request(url, {}, 'GET', true);
+};

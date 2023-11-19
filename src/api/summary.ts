@@ -6,3 +6,9 @@ export const getSummaries = async () => {
 	const url = `${config.base_url}/summary/user/`;
 	return await request(url, {}, 'GET');
 };
+
+export const getSummary = async (id: string) => {
+	// Get the summary
+	const url = `${config.base_url}/summary/${id}`;
+	return await request(url, {}, 'GET');
+};

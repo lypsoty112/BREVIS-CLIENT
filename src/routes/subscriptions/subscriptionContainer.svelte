@@ -1,9 +1,11 @@
 <script lang="ts">
-	export let subscriptionName: string = 'Demo name';
-	export let price: string = 'Free';
-	export let description: string = 'Demo subscription';
-	export let link: string = '/link';
+	export let subscriptionName: string;
+	export let price: number;
+	export let description: string;
+	export let link: string;
 	export let currently_subscribed: boolean = false;
+
+	$: displayPrice = price > 0 ? `€${price.toFixed(2)}` : 'Free';
 </script>
 
 <div class="card card-hover variant-ghost-primary">
@@ -12,7 +14,7 @@
 		<div
 			class="p-12 my-2 flex card card-hover variant-filled-tertiary font-bold text-2xl justify-center align-middle"
 		>
-			{price}
+			{displayPrice}
 		</div>
 		<hr class="!border-primary-400" />
 		<div>

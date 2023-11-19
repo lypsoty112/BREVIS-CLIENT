@@ -1,10 +1,45 @@
 <script lang="ts">
 	import TextInput from '../../components/inputs/textInput.svelte';
-	import { logOut } from '../../api/_loggedIn';
+	import { logOut, hasToBeLoggedIn } from '../../api/_loggedIn';
+	import { onMount } from 'svelte';
+	import { getUser } from '../../api/user';
+	import { getSubscriptionByUser } from '../../api/subscription';
+	import { getToastStore } from '@skeletonlabs/skeleton';
+	import { errorToast } from '../../components/interactions/toasts';
+
+	const toastStore = getToastStore();
 
 	let email: string = 'chris.doe@gmail.com';
 	let subscriptionName: string = 'Free plan';
+	let registration_date: string = '2021-01-01';
+	$: display_registration_date = new Date(registration_date).toDateString();
+	let username: string = 'chris.doe';
 	let payments = ['dfsq'];
+
+	onMount(async () => {
+		hasToBeLoggedIn();
+
+		// Get the account info
+		let response = await getUser();
+
+		if (response.status === 200) {
+			email = response.data.email;
+			username = response.data.username;
+			registration_date = response.data.registration_date;
+			console.log(response.data);
+		} else {
+			toastStore.trigger(errorToast(response.message));
+		}
+
+		// Get the current subscription
+		response = await getSubscriptionByUser();
+
+		if (response.status) {
+			subscriptionName = response.data.name;
+		} else {
+			toastStore.trigger(errorToast(response.message));
+		}
+	});
 
 	const onLogout = () => {
 		logOut();
@@ -17,7 +52,16 @@
 		<div class="card card-hover">
 			<header class="card-header font-bold text-xl">My account</header>
 			<div class="p-4">
+				<TextInput name="Username" placeholder="Username" value={username} disabled />
+
 				<TextInput name="E-mail" placeholder="E-mail" value={email} disabled />
+				<TextInput
+					name="Register date"
+					placeholder="Register date"
+					value={display_registration_date}
+					disabled
+				/>
+
 				<TextInput
 					name="Current subscription"
 					placeholder="Subscription name"
@@ -37,7 +81,8 @@
 					<div>You've made no payments to StudyGPT</div>
 				{:else}
 					<!--TODO: Change this to include payment containers-->
-					<div />
+
+					<div class=" variant-ghost-warning rounded-lg text-center">Under construction</div>
 				{/if}
 			</div>
 		</div>
