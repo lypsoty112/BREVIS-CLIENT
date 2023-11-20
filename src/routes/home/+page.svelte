@@ -19,7 +19,6 @@
 		let response = await getSummaries();
 		if (response.status === 200) {
 			allSummaries = response.data;
-			console.log(allSummaries);
 		} else {
 			toastStore.trigger(errorToast('Could not get summaries'));
 		}

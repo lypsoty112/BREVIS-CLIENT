@@ -2,9 +2,20 @@
 	export let name: string;
 	export let value: string;
 	export let title: string = '';
+
+	export let onClick: (e: any) => void = () => {};
+	export let onChange: (e: any) => void = () => {};
 </script>
 
 <label class="flex items-center space-x-2 cursor-pointer" {title}>
-	<input class="radio" type="radio" {name} {value} {...$$restProps} />
+	<input
+		class="radio"
+		type="radio"
+		{name}
+		{value}
+		{...$$restProps}
+		on:click={onClick}
+		on:change={onChange}
+	/>
 	<p><slot /></p>
 </label>

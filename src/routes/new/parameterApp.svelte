@@ -1,15 +1,14 @@
 <script lang="ts">
-	import { Accordion, AccordionItem } from '@skeletonlabs/skeleton';
 	import ParameterClass from './parameterClass.svelte';
 
-	export let selectedParameters: number[];
 	export let parameters: any[];
+	export let checkClassName: string = 'TOCHECK';
 </script>
 
 <div class="grid grid-cols-2 gap-4">
 	{#each parameters as parameterClass}
 		<div class="my-2">
-			<ParameterClass {parameterClass} />
+			<ParameterClass {parameterClass} {checkClassName} />
 		</div>
 	{/each}
 </div>

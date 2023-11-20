@@ -4,6 +4,7 @@
 	import CheckBox from '../../components/inputs/checkBox.svelte';
 
 	export let parameterClass: any;
+	export let checkClassName: string = 'TOCHECK';
 	$: multiple = parameterClass?.selection_type === 0;
 </script>
 
@@ -16,10 +17,11 @@
 			<svelte:fragment slot="content">
 				<div class="italic text-sm">{parameterClass.description}</div>
 				<hr class="!border-t-1" />
-				<div class="my-2 space-y-2">
+				<div class=" my-2 space-y-2">
 					{#if multiple}
 						{#each parameterClass.parameters as param}
 							<CheckBox
+								class={'checkbox ' + checkClassName}
 								name={parameterClass.parameter_class_id}
 								value={param.parameter_id}
 								checked={param.is_default}
@@ -31,6 +33,7 @@
 					{:else}
 						{#each parameterClass.parameters as param}
 							<RadioButton
+								class={'radio ' + checkClassName}
 								name={parameterClass.parameter_class_id}
 								value={param.parameter_id}
 								checked={param.is_default}

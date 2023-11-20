@@ -51,13 +51,14 @@ export const request = async (
 	url: string,
 	body: object,
 	method: string = 'GET',
-	loginRequired: boolean = true
+	loginRequired: boolean = true,
+	includeBody: boolean = true
 ) => {
 	// Add body to payload if method is not GET
 	let payload = {
 		method
 	};
-	if (method.toUpperCase() != 'GET') {
+	if (method.toUpperCase() != 'GET' && includeBody) {
 		payload = {
 			...payload,
 			...{ body: JSON.stringify(body) }
@@ -85,7 +86,54 @@ export const request = async (
 	}
 
 	const response = await fetch(url, payload);
-	const data = await response.json();
+	let data;
+	try {
+		data = await response.json();
+	} catch (e) {
+		data = {};
+	}
+	return {
+		status: response.status,
+		data: data,
+		message: response.statusText
+	};
+};
+
+export const requestMultipart = async (
+	url: string,
+	formData: FormData,
+	method: string = 'GET',
+	loginRequired: boolean = true
+) => {
+	let payload = {
+		method: method
+	};
+	if (method.toUpperCase() != 'GET') {
+		payload = {
+			...payload,
+			...{ body: formData }
+		};
+	}
+
+	// Add headers to payload
+	const loggedIn = getLoggedIn();
+
+	if (loggedIn && loginRequired) {
+		await refreshTokenWhenExpired();
+		payload = {
+			...payload,
+			...{
+				headers: { Authorization: `Bearer ${getToken(false)}` }
+			}
+		};
+	}
+	const response = await fetch(url, payload);
+	let data;
+	try {
+		data = await response.json();
+	} catch (e) {
+		data = {};
+	}
 	return {
 		status: response.status,
 		data: data,

@@ -11,9 +11,10 @@
 	import Footer from '../components/footer.svelte';
 
 	initializeStores();
+	let maxToast = 5;
 </script>
 
-<Toast position="br" />
+<Toast position="br" zIndex="z-50" shadow="shadow-lg" max={maxToast} />
 <Modal />
 
 <AppShell>
