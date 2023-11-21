@@ -6,7 +6,12 @@
 	import { getSubscriptionByUser } from '../../api/subscription';
 	import { getToastStore } from '@skeletonlabs/skeleton';
 	import { errorToast } from '../../components/interactions/toasts';
+	import UnderConstruction from '../../components/underConstruction.svelte';
+	import { getModalStore } from '@skeletonlabs/skeleton';
+	import type { ModalComponent } from '@skeletonlabs/skeleton';
+	import ResetPasswordModal from './resetPasswordModal.svelte';
 
+	const modalStore = getModalStore();
 	const toastStore = getToastStore();
 
 	let email: string = 'chris.doe@gmail.com';
@@ -45,6 +50,17 @@
 		logOut();
 		window.location.href = '/';
 	};
+
+	const onResetPassword = async () => {
+		let modalComponent: ModalComponent = {
+			ref: ResetPasswordModal
+		};
+
+		modalStore.trigger({
+			type: 'component',
+			component: modalComponent
+		});
+	};
 </script>
 
 <div class="container mx-auto p-4">
@@ -70,7 +86,9 @@
 				/>
 				<a href="/subscriptions" class="underline">View all options for subscriptions</a>
 				<div class="my-4">
-					<button class="btn variant-filled-secondary">Change password</button>
+					<button class="btn variant-filled-secondary" on:click={onResetPassword}
+						>Change password</button
+					>
 				</div>
 			</div>
 		</div>
@@ -81,8 +99,9 @@
 					<div>You've made no payments to StudyGPT</div>
 				{:else}
 					<!--TODO: Change this to include payment containers-->
-
-					<div class=" variant-ghost-warning rounded-lg text-center">Under construction</div>
+					<UnderConstruction
+						errorMessage="We're still building this part of the page. Please check again later. Sorry for the inconvenience."
+					/>
 				{/if}
 			</div>
 		</div>
