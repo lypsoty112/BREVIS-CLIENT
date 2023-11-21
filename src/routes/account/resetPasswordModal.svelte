@@ -1,10 +1,8 @@
 <script lang="ts">
-	import NumberInput from '../../components/inputs/numberInput.svelte';
-	import TextAreaInput from '../../components/inputs/textAreaInput.svelte';
 	import Icon from '@iconify/svelte';
 	import { getModalStore } from '@skeletonlabs/skeleton';
-	import { createFeedback } from '../../api/feedback';
 	import { getToastStore } from '@skeletonlabs/skeleton';
+	import { resetPassword } from '../../api/user';
 	import { errorToast, successToast } from '../../components/interactions/toasts';
 	import Loader from '../../components/loader.svelte';
 	import PasswordInput from '../../components/inputs/passwordInput.svelte';
@@ -18,6 +16,19 @@
 
 	const exitFullScreen = () => {
 		modalStore.close();
+	};
+
+	const onSubmit = async () => {
+		loading = true;
+		let res = await resetPassword(password, newPassword, repeatNewPassword);
+		if (res.status == 204) {
+			loading = false;
+			exitFullScreen();
+			toastStore.trigger(successToast('Password changed!'));
+		} else {
+			loading = false;
+			toastStore.trigger(errorToast(res.message));
+		}
 	};
 </script>
 
@@ -41,7 +52,7 @@
 			<PasswordInput name="New password" bind:value={newPassword} />
 			<PasswordInput name="Repeat new password" bind:value={repeatNewPassword} />
 			<div class="flex justify-center mt-4">
-				<button class="btn variant-filled-secondary">
+				<button class="btn variant-filled-secondary" on:click={onSubmit}>
 					{#if loading}
 						<Loader />
 					{:else}

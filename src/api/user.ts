@@ -114,3 +114,36 @@ export const getUser = async () => {
 	const url = `${config.base_url}/user`;
 	return await request(url, {}, 'GET', true);
 };
+
+export const resetPassword = async (
+	password: string,
+	newPassword: string,
+	repeatNewPassword: string
+) => {
+	if (!password || !repeatNewPassword || !newPassword) {
+		return {
+			status: 400,
+			data: {},
+			message: 'No fields can be empty'
+		};
+	}
+
+	if (newPassword != repeatNewPassword) {
+		return {
+			status: 400,
+			data: {},
+			message: 'Repeated password does not match new password'
+		};
+	}
+
+	const url = `${config.base_url}/user/resetPassword/`;
+	return await request(
+		url,
+		{
+			current_password: password,
+			new_password: newPassword
+		},
+		'PUT',
+		true
+	);
+};

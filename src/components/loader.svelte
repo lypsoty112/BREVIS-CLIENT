@@ -1,7 +1,9 @@
-<div class="lds-ring">
-	<div class="border-t-primary-500 border-4 bg-transparent border-transparent" />
-	<div class="border-t-primary-500 border-4 bg-transparent border-transparent" />
-	<div class="border-t-primary-500 border-4 bg-transparent border-transparent" />
+<div>
+	<div class="lds-ring">
+		<div class="border-t-primary-500 border-4 bg-transparent border-transparent" />
+		<div class="border-t-primary-500 border-4 bg-transparent border-transparent" />
+		<div class="border-t-primary-500 border-4 bg-transparent border-transparent" />
+	</div>
 </div>
 
 <style>
