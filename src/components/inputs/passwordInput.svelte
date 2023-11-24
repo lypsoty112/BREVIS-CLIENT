@@ -20,13 +20,13 @@
 
 <label class="label my-2">
 	<span>{name}</span>
-	<div class="flex">
+	<div class="md:flex">
 		{#if hidden}
-			<input class="input w-11/12" type="password" {placeholder} bind:value />
+			<input class="input w-full md:w-11/12" type="password" {placeholder} bind:value />
 		{:else}
-			<input class="input w-11/12" type="text" {placeholder} bind:value />
+			<input class="input w-full md:w-11/12" type="text" {placeholder} bind:value />
 		{/if}
-		<div class="w-1/12 flex justify-end">
+		<div class="hidden w-0 md:w-1/12 md:flex justify-end">
 			<button class="btn-icon variant-filled-secondary" on:click={togglePassword}>
 				{#if hidden}
 					<Icon icon="basil:eye-closed-solid" />

@@ -44,7 +44,7 @@
 
 <div class="container mx-auto p-4">
 	<div class="card p-4 variant-glass-primary">
-		<header class="card-header flex justify-between">
+		<header class="card-header md:flex justify-between">
 			{#if showSearch}
 				<input
 					type="text"
@@ -66,16 +66,16 @@
 				</div>
 			{:else}
 				<div class="text-2xl font-bold flex-grow">My summaries</div>
-				<div class="flex">
+				<div class="md:flex my-2 md:my-0">
 					<a href="/new" class="btn text-base btn-lg variant-filled-secondary mx-2">New summary</a>
 					<button
 						type="button"
-						class="btn btn-icon variant-filled-secondary mx-2"
+						class="w-0 md:btn md:btn-icon variant-filled-secondary mx-2"
 						on:click={() => {
 							showSearch = true;
 						}}
 					>
-						<Icon icon="basil:search-solid" class=" h-fit w-fit" />
+						<Icon icon="basil:search-solid" class=" w-0  h-0 md:h-fit md:w-fit" />
 					</button>
 				</div>
 			{/if}

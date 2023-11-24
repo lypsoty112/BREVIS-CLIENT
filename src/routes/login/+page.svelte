@@ -27,7 +27,7 @@
 </script>
 
 <div class="container m-auto p-4">
-	<div class="card card-hover p-4 variant-glass-primary w-4/6 m-auto">
+	<div class="card card-hover p-4 variant-glass-primary w-full md:w-4/6 m-auto">
 		<header class="card-header font-bold text-xl">Log in</header>
 		<div class="my-4 px-4">
 			<TextInput bind:value={email} name="E-mail" placeholder="chris.doe@gmail.com" />

@@ -29,7 +29,7 @@
 </script>
 
 <div class="container m-auto p-4">
-	<div class="card card-hover p-4 variant-glass-primary w-4/6 m-auto">
+	<div class="card card-hover p-4 variant-glass-primary md:w-4/6 m-auto">
 		<header class="card-header font-bold text-xl">Register</header>
 		<div class="my-4 px-4">
 			<TextInput name="Username" placeholder="chris_doe" bind:value={username} />

@@ -32,7 +32,7 @@
 	};
 </script>
 
-<div class="card w-4/6 mx-auto variant-glass">
+<div class="card w-full md:w-4/6 mx-auto variant-glass">
 	<div class="card variant-glass p-2">
 		<header class="card-header">
 			<div class="grid grid-cols-2">

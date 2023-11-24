@@ -89,7 +89,7 @@
 	<header class="">
 		<div class="text-2xl font-bold my-4 text-center">Create a new summary</div>
 	</header>
-	<div class="card p-4 variant-glass-primary w-4/6 m-auto">
+	<div class="card p-4 variant-glass-primary w-full md:w-4/6 m-auto">
 		{#if !creatingSummary}
 			<Stepper on:next={onNextStep} on:complete={onSubmit}>
 				<Step locked={lockFirstStep}>

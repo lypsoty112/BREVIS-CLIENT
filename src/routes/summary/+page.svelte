@@ -106,7 +106,11 @@
 </script>
 
 <div class="container m-auto p-4">
-	<div class="p-2 flex justify-end">
+	<div class="p-2 space-x-2 space-y-2 md:flex md:justify-end">
+		<button class="btn variant-ghost-warning">
+			<Icon icon="basil:download-solid" />
+			<span>Download (Coming soon)</span>
+		</button>
 		<button class="btn variant-ghost-error" on:click={onDelete}>
 			<Icon icon="basil:trash-alt-solid" />
 			<span>Delete this summary</span>
