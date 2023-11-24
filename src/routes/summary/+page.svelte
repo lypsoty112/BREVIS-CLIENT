@@ -34,7 +34,7 @@
 			description = res.data.description;
 			content = res.data.content;
 			date = res.data.date_completed;
-			document.title = title + ' - StudyGPT';
+			document.title = title + ' - Brevis.ai';
 		} else {
 			const toastStore = getToastStore();
 			toastStore.trigger(errorToast(res.message));

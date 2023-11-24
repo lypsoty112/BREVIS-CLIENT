@@ -32,7 +32,7 @@
 					alt="logo"
 					class="h-9 variant-glass-primary p-1 rounded-lg"
 				/>
-				<span>StudyGPT</span>
+				<span>Brevis.ai</span>
 			</button>
 		</a></svelte:fragment
 	>
