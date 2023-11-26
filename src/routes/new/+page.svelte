@@ -25,6 +25,7 @@
 	let parameters: any[] = [];
 	let checkClassName: string = 'TOCHECK';
 	let creatingSummary: boolean = false;
+	let acceptedFileExtensions: string[] = ['pdf', 'docx', 'html', 'txt', 'md'];
 
 	$: lockFirstStep = uploadedFiles?.length === 0 || uploadedFiles === undefined;
 	$: lockSecondStep = title === '' || title === undefined;
@@ -94,7 +95,13 @@
 			<Stepper on:next={onNextStep} on:complete={onSubmit}>
 				<Step locked={lockFirstStep}>
 					<svelte:fragment slot="header">Upload the file</svelte:fragment>
-					<FileDropzone name="files" bind:files={uploadedFiles} class="my-4" type="file">
+					<FileDropzone
+						name="files"
+						bind:files={uploadedFiles}
+						class="my-4"
+						type="file"
+						accept={acceptedFileExtensions.map((ext) => '.' + ext).join(',')}
+					>
 						<svelte:fragment slot="lead">
 							<div class="flex justify-center">
 								<Icon icon="basil:file-upload-solid" height="40px" />
