@@ -29,17 +29,18 @@
 		// Get the summary
 		let res = await getSummary(decoded_id);
 		console.log(res);
+		console.log(res.status);
 		if (res.status === 200) {
 			title = res.data.name;
 			description = res.data.description;
 			content = res.data.content;
 			date = res.data.date_completed;
 			document.title = title + ' - Brevis.ai';
+			loading = false;
 		} else {
-			const toastStore = getToastStore();
 			toastStore.trigger(errorToast(res.message));
+			loading = false;
 		}
-		loading = false;
 	});
 
 	const openFeedback = () => {

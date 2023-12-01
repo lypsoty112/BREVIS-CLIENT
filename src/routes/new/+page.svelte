@@ -74,14 +74,18 @@
 			selectedParameters,
 			parameters
 		);
-		if (res.status === 201) {
-			window.location.href = '/summary?id=' + btoa(res.data.summary_id.toString());
-		} else if (res.status === 501) {
-			toastStore.trigger(errorToast('Something went wrong, please try again later'));
-			creatingSummary = false;
-		} else {
-			toastStore.trigger(errorToast(res.message));
-			creatingSummary = false;
+		switch (res.status) {
+			case 201:
+				window.location.href = '/summary?id=' + btoa(res.data.summary_id.toString());
+				break;
+			case 501:
+				toastStore.trigger(errorToast('Something went wrong, please try again later'));
+				creatingSummary = false;
+				break;
+			default:
+				toastStore.trigger(errorToast(res.message));
+				creatingSummary = false;
+				break;
 		}
 	};
 </script>

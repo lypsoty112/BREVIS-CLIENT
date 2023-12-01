@@ -63,13 +63,36 @@ export const createSummary = async (
 	}
 	// Send the request
 	const url = `${config.base_url}/summary/`;
-
-	console.log('file', file, file.name, typeof file);
-
 	const formData = new FormData();
 	formData.append('file', file, file.name);
 	formData.set('name', title);
 	if (description) formData.set('description', description);
 	formData.set('parameters', JSON.stringify(selectedParameters));
+	return await requestMultipart(url, formData, 'POST', true);
+};
+
+export const testSummary = async (
+	file: File
+): Promise<{
+	status: number;
+	data: any;
+	message: string;
+}> => {
+	// Make sure the file is not empty
+	if (file.size === 0) {
+		return {
+			status: 400,
+			data: {},
+			message: 'File cannot be empty'
+		};
+	}
+
+	// Send the request
+	const url = `${config.base_url}/summary/test/`;
+	const formData = new FormData();
+	formData.append('file', file, file.name);
+	formData.set('name', 'test: ' + new Date().toLocaleString());
+	formData.set('description', 'test: ' + file.name);
+	formData.set('parameters', JSON.stringify([1]));
 	return await requestMultipart(url, formData, 'POST', true);
 };
