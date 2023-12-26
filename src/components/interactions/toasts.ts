@@ -1,19 +1,19 @@
 import type { ToastSettings } from '@skeletonlabs/skeleton';
 
 export const errorToast = (message: string): ToastSettings => {
-	return baseToast(message, 'variant-filled-error');
+	return baseToast(message, 'variant-ghost-error');
 };
 
 export const successToast = (message: string): ToastSettings => {
-	return baseToast(message, 'variant-filled-success');
+	return baseToast(message, 'variant-ghost-success');
 };
 
 export const infoToast = (message: string): ToastSettings => {
-	return baseToast(message, 'variant-filled-primary');
+	return baseToast(message, 'variant-ghost-primary');
 };
 
 export const warningToast = (message: string): ToastSettings => {
-	return baseToast(message, 'variant-filled-warning');
+	return baseToast(message, 'variant-ghost-warning');
 };
 
 const baseToast = (message: string, background: string): ToastSettings => {

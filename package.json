@@ -38,6 +38,10 @@
 		"@cocreators-ee/apity": "^0.0.5",
 		"@floating-ui/dom": "1.5.3",
 		"email-validator": "^2.0.4",
+		"html2pdf.js": "^0.10.1",
+		"jspdf": "^2.5.1",
+		"mermaid": "^10.6.1",
+		"pdfkit": "^0.14.0",
 		"svelte-markdown": "^0.4.0"
 	}
 }

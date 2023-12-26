@@ -5,7 +5,7 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { getToastStore } from '@skeletonlabs/skeleton';
-	import { errorToast } from '../../components/interactions/toasts';
+	import { errorToast, successToast, warningToast } from '../../components/interactions/toasts';
 	import { deleteSummary, getSummary } from '../../api/summary';
 	import Loader from '../../components/loader.svelte';
 	import MarkdownRenderer from './markdownRenderer.svelte';
@@ -59,6 +59,21 @@
 		});
 	};
 
+	const downloadFile = () => {
+		// Give a message that this isn't yet implemented
+		toastStore.trigger(warningToast('This feature is not yet implemented. Sorry!'));
+	};
+
+	const copyContent = async () => {
+		try {
+			await navigator.clipboard.writeText(content);
+			toastStore.trigger(successToast('Copied to clipboard!'));
+		} catch (err) {
+			console.error('Unable to copy to clipboard', err);
+			toastStore.trigger(errorToast('Unable to copy to clipboard'));
+		}
+	};
+
 	const enterFullScreen = () => {
 		let modalComponent: ModalComponent = {
 			ref: FullScreenComponent,
@@ -107,12 +122,15 @@
 </script>
 
 <div class="container m-auto p-4">
-	<div class="p-2 space-x-2 space-y-2 md:flex md:justify-end">
-		<button class="btn variant-ghost-warning">
-			<Icon icon="basil:download-solid" />
-			<span>Download (Coming soon)</span>
+	<div class="p-2 md:flex md:justify-end">
+		<button on:click={copyContent} class="btn variant-ghost-tertiary m-2">
+			<span>Copy</span>
 		</button>
-		<button class="btn variant-ghost-error" on:click={onDelete}>
+		<button on:click={downloadFile} class="btn variant-ghost-tertiary m-2">
+			<Icon icon="basil:download-solid" />
+			<span>Download</span>
+		</button>
+		<button class="btn variant-ghost-error m-2" on:click={onDelete}>
 			<Icon icon="basil:trash-alt-solid" />
 			<span>Delete this summary</span>
 		</button>

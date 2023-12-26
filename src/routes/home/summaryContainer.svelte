@@ -9,11 +9,11 @@
 </script>
 
 <a href={'/summary?id=' + link_id}>
-	<div class="card card-hover cursor-pointer p-2 variant-filled-primary">
+	<div class="card card-hover cursor-pointer p-2 variant-filled-primary !h-40 overflow-hidden">
 		<header class="card-header font-bold text-lg">{name}</header>
 		<section class="p-4">
 			<div class="italic">{date}</div>
-			<div>
+			<div class="">
 				{description}
 			</div>
 		</section>
