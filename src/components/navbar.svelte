@@ -32,7 +32,7 @@
 					alt="logo"
 					class="h-9 variant-glass-primary p-1 rounded-lg"
 				/>
-				<span>Brevis.ai</span>
+				<span>Brevis AI</span>
 			</button>
 		</a></svelte:fragment
 	>

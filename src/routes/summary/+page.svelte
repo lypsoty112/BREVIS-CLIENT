@@ -35,7 +35,7 @@
 			description = res.data.description;
 			content = res.data.content;
 			date = res.data.date_completed;
-			document.title = title + ' - Brevis.ai';
+			document.title = title + ' - Brevis AI';
 			loading = false;
 		} else {
 			toastStore.trigger(errorToast(res.message));

@@ -5,14 +5,10 @@
 		<div class="card card-hover p-4 w-full md:w-4/6 variant-glass-primary">
 			<header class="card-header font-bold">Create great summaries in seconds</header>
 			<section class="p-4">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque ac lorem vel
-				suscipit. Suspendisse vel semper arcu, vel eleifend mi. Duis varius lectus a libero euismod,
-				non rhoncus est venenatis. Ut quis aliquet leo, non accumsan lectus. Pellentesque vestibulum
-				sem vitae leo eleifend, vitae feugiat ante pretium. Integer dui ipsum, tempor vel orci ac,
-				consectetur viverra urna. Proin nec ultricies nisl. Aenean quis turpis in augue malesuada
-				varius sed at eros. Phasellus facilisis metus sit amet orci mattis, a faucibus lectus
-				sagittis. Integer at ipsum ut neque dapibus aliquet. Pellentesque orci mi, aliquet a erat
-				vel, cursus porttitor justo.
+				Unlock the power of brevity with Brevis AI, your ultimate tool for crafting exceptional
+				summaries at the speed of thought. Whether you're a student racing against exam time or a
+				professional aiming to absorb information swiftly, Brevis AI is your go-to platform for
+				concise and effective summarization.
 			</section>
 		</div>
 	</div>
@@ -25,14 +21,12 @@
 					<img src="/images/fill-image.jpeg" class="h-auto max-w-full rounded-lg" alt="" />
 				</div>
 				<div class="md:w-3/4 pl-4">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque ac lorem vel
-					suscipit. Suspendisse vel semper arcu, vel eleifend mi. Duis varius lectus a libero
-					euismod, non rhoncus est venenatis. Ut quis aliquet leo, non accumsan lectus. Pellentesque
-					vestibulum sem vitae leo eleifend, vitae feugiat ante pretium. Integer dui ipsum, tempor
-					vel orci ac, consectetur viverra urna. Proin nec ultricies nisl. Aenean quis turpis in
-					augue malesuada varius sed at eros. Phasellus facilisis metus sit amet orci mattis, a
-					faucibus lectus sagittis. Integer at ipsum ut neque dapibus aliquet. Pellentesque orci mi,
-					aliquet a erat vel, cursus porttitor justo.
+					Unlock the potential of artificial intelligence with Brevis AI, leveraging the best AI
+					technology to effortlessly distill complex information into concise summaries. Tailor your
+					summarization experience to your unique preferences and witness continuous improvement as
+					the AI adapts over time. Trust in Brevis AI to revolutionize your learning journey,
+					providing you with a seamless and efficient way to absorb key insights. Sign up now and
+					harness the advantages of AI for unparalleled summarization.
 				</div>
 			</section>
 		</div>
@@ -42,14 +36,13 @@
 			<header class="card-header font-bold">Get started now</header>
 			<section class="p-4 md:flex">
 				<div class="w-full md:w-3/4">
-					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque ac lorem vel
-					suscipit. Suspendisse vel semper arcu, vel eleifend mi. Duis varius lectus a libero
-					euismod, non rhoncus est venenatis. Ut quis aliquet leo, non accumsan lectus. Pellentesque
-					vestibulum sem vitae leo eleifend, vitae feugiat ante pretium. Integer dui ipsum, tempor
-					vel orci ac, consectetur viverra urna. Proin nec ultricies nisl. Aenean quis turpis in
-					augue malesuada varius sed at eros. Phasellus facilisis metus sit amet orci mattis, a
-					faucibus lectus sagittis. Integer at ipsum ut neque dapibus aliquet. Pellentesque orci mi,
-					aliquet a erat vel, cursus porttitor justo.
+					Embark on your journey of efficient learning with Brevis AI. Getting started is a breeze –
+					simply sign up and dive into a world of quick and precise summarization. Upload your
+					documents or courses, tailor your preferences, and let the power of AI create insightful
+					summaries in seconds. Whether you're a student gearing up for exams or a professional
+					striving for enhanced productivity, Brevis AI is your go-to platform. Don't wait; get
+					started now and experience the convenience of creating great summaries effortlessly. Your
+					optimized learning adventure begins with just a click!
 				</div>
 				<div class="w-full md:w-1/4 my-4 flex align-middle items-center justify-center">
 					<a href="/register"
